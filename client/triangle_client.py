@@ -1,7 +1,5 @@
 import os
-
 import requests
-
 
 def main() -> None:
     base_url = os.environ.get("BASE_URL", "http://127.0.0.1:8000")
@@ -28,7 +26,5 @@ def main() -> None:
         detail = None
     print(f"Erro ({r.status_code}): {detail or r.text}")
 
-
 if __name__ == "__main__":
     main()
-
