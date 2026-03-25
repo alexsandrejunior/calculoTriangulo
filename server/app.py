@@ -14,7 +14,6 @@ class TriangleAreaResponse(BaseModel):
     height: float
     area: float
 
-
 @app.post("/api/v1/triangle/area", response_model=TriangleAreaResponse)
 def triangle_area(req: TriangleAreaRequest) -> TriangleAreaResponse:
     if req.base <= 0:
@@ -24,4 +23,3 @@ def triangle_area(req: TriangleAreaRequest) -> TriangleAreaResponse:
 
     area = (req.base * req.height) / 2.0
     return TriangleAreaResponse(base=req.base, height=req.height, area=area)
-
